@@ -9,10 +9,13 @@
         <meta name="description" content="P&N shop là cửa hàng chuyên bán thức ăn và đồ dùng cho chó mèo, website đặt hàng và mua hàng trực tuyến với những ưu đãi cho người dùng mới và khách hàng thân thiết">
         <meta http-equiv="REFRESH" content="2000">
         <link href="css/style.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
         <style>
             @font-face{
                 font-family: Hehe;
@@ -25,10 +28,54 @@
             body{
                 background-image:url("images/background.png");
                 font-family: Hehe;
+                cursor: url(cursors/cursor1.cur),pointer;
             }
+            a{
+                cursor:url(cursors/cursor2.cur),auto;
+            }
+
         </style>       
     </head>
     <body>
+        <div >
+            <a href="javascript:;" id="go-to-top" title="Go to top">
+                <img src="images/gototop.png"/>
+            </a>
+        </div>
+        <div class="info">
+            <a href ="javascript:;" title="Thoát"><div class="exit"><i class="fas fa-times"></i></div></a>
+            <div class="left">
+                <img class ="mainimage" src="images/sp1.png" alt="product"/>
+                <div class ="thumb">
+                    <div><img id ="firstthumb" src ="images/sp1_thumb1.jpg" alt ="hinh1"/></div>
+                    <div><img src ="images/sp1_thumb2.jpg" alt ="hinh2"/></div>
+                    <div><img src ="images/sp1_thumb3.jpg" alt ="hinh3"/></div>
+                    <div><img src ="images/sp1_thumb4.jpg" alt ="hinh4"/></div>
+                    <div><img src ="images/sp1_thumb5.jpg" alt ="hinh5"/></div>
+                </div>
+            </div>
+            <div class="right">
+                <h1><strong>Thức ăn cho mèo con gói Me-O 1,1kg</strong></h1>
+                <i><h3>125.000<sup> đ</sup></h3></i>
+                <p>
+                    huhu
+                
+                </p>
+                <div class = "btns">
+                    <a>
+                        <div class = "cart">
+                            Thêm vào túi
+                        </div>
+                    </a>
+                    <a>
+                        <div class = "buy">
+                        Mua ngay
+                        </div>
+                    </a>    
+                </div>
+            </div>
+        </div>
+        <div id="text"></div>
         <section>
         <div class="cover">
             <img src="images/logo&name.png" alt="P&N shop"/>
@@ -36,14 +83,13 @@
         <nav>
             <div>
                 <ul class="menu">
-                    <li><a href="#"><i class="fas fa-home"></i> TRANG CHỦ</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> TRANG CHỦ</a></li>
                     <li><a href="sanpham.html"><i class="fas fa-fish"></i> SẢN PHẨM</a></li>
                     <li><a href="#"><i class="fas fa-ticket-alt"></i> VOUNCHER</a></li>
                     <li><a href="#"><i class="fas fa-user"></i> TÀI KHOẢN</a></li>
                     <li><a href="#"><i class="fas fa-phone"></i> LIÊN HỆ</a></li>
                     <li>
-                        <input type="text" placeholder="Tìm kiếm...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
+                        <input type="text" placeholder="Tìm kiếm..."><button type="submit"><i class="fas fa-search"></i></button>
                     </li>
                 </ul>
             </div>
@@ -97,31 +143,44 @@
                     <div class ="title">
                         <ul>
                             <li>SẢN PHẨM NỔI BẬT:</li>
-                            <li><a href="#" title="Xem thêm">XEM THÊM <i class="fas fa-arrow-circle-right"></i></a></li>
+                            <li><a href="sanpham.html" title="Xem thêm">XEM THÊM <i class="fas fa-arrow-circle-right"></i></a></li>
                         </ul>
                     </div>    
                 </div>    
                 <div>
                     <div class="items">
                         <div class="item">
-                            <a href ="#">
-                            <img src="images/sp1.png" alt="product1"/>
-                            <h2><strong>Thức ăn cho mèo con gói Me-O 1,1kg</strong></h2>
-                            <h3><i>125.000đ</i></h3>
+                            <a href ="javascript:;" rel ="1">
+                                <img src="images/sp1_thumb1.jpg" alt="product1"/>
+                                <div class ="thumb">
+                                    <div class="hide"><img src ="images/sp1_thumb1.jpg" alt ="hinh1"/></div>
+                                    <div class="hide"><img src ="images/sp1_thumb2.jpg" alt ="hinh2"/></div>
+                                    <div class="hide"><img src ="images/sp1_thumb3.jpg" alt ="hinh3"/></div>
+                                    <div class="hide"><img src ="images/sp1_thumb4.jpg" alt ="hinh4"/></div>
+                                    <div class="hide"><img src ="images/sp1_thumb5.jpg" alt ="hinh5"/></div>
+                                </div>
+                                <h2><strong>Thức ăn cho mèo con gói Me-O vị hải sản 1,1kg</strong></h2>
+                                <h3><i>125.000<sup> đ</sup></i></h3>
+                                <p class = "hide">
+                                    Thức Ăn Cho Mèo Trưởng Thành Me-O Vị Hải Sản là thức ăn khô cho mèo cung cấp nguồn năng lượng chính cho cơ thể của thú cưng. Ngoài ra tinh bột trong loại đồ ăn cho mèo này giúp ngăn chặn bệnh táo bón ruột. Hương vị từ hải sản thơm ngon, sản phẩm sẽ góp phần tạo nên sự mới lạ trong bữa ăn cho thú cưng nhà bạn.
+                                </p>
                             </a> 
                         </div>
                         <div class="item">
-                            <a href="#">
-                                <img src="images/sp2.png" alt="product2"/>
+                            <a href="javascript:;" rel ="2">
+                                <img src="images/sp2_thumb1.jpg" alt="product2"/>
                                 <h2><strong>Thức ăn cho mèo Whiskas vị cá thu 1,2kg</strong></h2>
-                                <h3><i>115.000đ</i></h3>
+                                <h3><i>115.000<sup> đ</sup></i></h3>
+                                <p class = "hide">
+                                    Thương em lắm á bé Ngân *thả tim*
+                                </p>
                             </a> 
                         </div>
                         <div class="item">
-                            <a href="#">
-                            <img src="images/sp3.png" alt="product3"/>
-                            <h2><strong>Thức ăn cho chó con Baby Blue vị gà 1,8kg</strong></h2>
-                            <h3><i>420.000đ</i></h3>
+                            <a href="javascript:;" rel ="3">
+                                <img src="images/sp3_thumb1.jpg" alt="product3"/>
+                                <h2><strong>Thức ăn cho chó con Baby Blue vị gà 1,8kg</strong></h2>
+                                <h3><i>420.000<sup> đ</sup></i></h3>
                             </a> 
                         </div>
                     </div>
@@ -155,7 +214,7 @@
                     <div class ="title">
                         <ul>
                             <li>HÌNH ẢNH VÀ VIDEO VỀ THÚ CƯNG</li>
-                            <li><a href="#" title="Xem thêm">XEM THÊM <i class="fas fa-arrow-circle-right"></i></a></li>
+                            <li><a href="image&video.html" title="Xem thêm">XEM THÊM <i class="fas fa-arrow-circle-right"></i></a></li>
                         </ul>
                         <div class="imgframe">
                             <img src="images/img1.png" alt="img1"/>
@@ -165,25 +224,24 @@
                     </div>
                 </div>   
             </div>
-            <!--<div class="notice">
-                <p>
-                </p>
-            </div>-->
         </div>
         </section>
         <section>
             <div id="footer">
                 <div id="contactframe">
-                    <h2>Kết nối với chúng tôi:</h2>
-                    <h3><a href="https://www.facebook.com/PN-Shop-110697547988617" target="blank"><i class="fab fa-facebook"></i> : P&N SHOP</a></h3>
-                    <h3><a href="#"><i class="fab fa-instagram"></i> : @PN_shop </a></h3>
-                    <h3><a><i class="far fa-envelope"></i> : lacaigido@gmail.com</a></h3>
-                    <h3><i class="fas fa-phone"></i> : 0909052307</h3>
+                    <h2>Liên hệ với chúng tôi:</h2>
+                    <h3><b><i class="fas fa-phone"></i> : 0909052307</b></h3>
+                    <h3><b><a href="mailto:pnshop2307@gmail.com"><i class="far fa-envelope"></i> : pnshop2307</a></b></h3>
+                    <h3><b><a href="https://www.google.com/maps/place/371+Nguy%E1%BB%85n+Ki%E1%BB%87m,+Ph%C6%B0%E1%BB%9Dng+3,+G%C3%B2+V%E1%BA%A5p,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh" target="blank"><i class="fas fa-map-marker-alt"></i> : 371 Nguyễn Kiệm, P.3, Q.Gò Vấp, TP.HCM</a></b></h3>
                 </div>
-                <div id="mapframe">
-                    <h2>Địa chỉ tại:</h2>
-                    <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.925050868632!2d106.67491891439468!3d10.817047661401515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528e1f241211f%3A0xc9ef195798144b1f!2zxJDhuqFpIGjhu41jIE3hu58gVFAuSENN!5e0!3m2!1svi!2s!4v1629193042145!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+                <div id="followus">
+                    <h2>Theo dõi chúng tôi tại:</h2>
+                    <div class="followicons">
+                        <a class ="followicon" href="https://www.facebook.com/PN-Shop-110697547988617" target="blank"><div><i class="fab fa-facebook-f"></i></div></a>
+                        <a class ="followicon" href="https://www.instagram.com/pn._.petshop/" target="blank"><div><i class="fab fa-instagram"></i></div></a>
+                        <a class ="followicon" href="https://twitter.com/PNshop2307" target="blank"><div><i class="fab fa-twitter"></i></div></a>
+                    </div>
+                </div>    
             </div>
         </section>
     </body>
